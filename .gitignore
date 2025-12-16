@@ -1,0 +1,59 @@
+```
+# Java/Maven
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar
+*.tar.gz
+
+# Dependencies
+lib/
+node_modules/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+test-results/
+*.tmp
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Build tools
+.gradle/
+build/
+dist/
+out/
+
+# Python (if any mixed projects)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+```

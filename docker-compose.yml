@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  # MySQL Database Service
+  mysql-db:
+    image: mysql:8.0
+    container_name: ecommerce-mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: ecommerce_db
+      MYSQL_USER: ecommerce_user
+      MYSQL_PASSWORD: ecommerce_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/01-init.sql  # Database initialization script
+    networks:
+      - ecommerce-network
+
+  # PostgreSQL Database Service (Alternative)
+  postgres-db:
+    image: postgres:15
+    container_name: ecommerce-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ecommerce_db
+      POSTGRES_USER: ecommerce_user
+      POSTGRES_PASSWORD: ecommerce_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ecommerce-network
+
+  # Main Application Service
+  ecommerce-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: smart-ecommerce-app
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql-db  # Using MySQL as the primary database
+    environment:
+      DB_HOST: mysql-db
+      DB_PORT: 3306
+      DB_NAME: ecommerce_db
+      DB_USER: ecommerce_user
+      DB_PASSWORD: ecommerce_password
+      DB_TYPE: mysql
+    volumes:
+      - ./config:/app/config  # Mount external config directory
+    networks:
+      - ecommerce-network
+    stdin_open: true  # Equivalent to -i
+    tty: true         # Equivalent to -t
+
+networks:
+  ecommerce-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
+  postgres_data:

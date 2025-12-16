@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar VBox.vgrow="NEVER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="New" />
+              <MenuItem mnemonicParsing="false" text="Open…" />
+              <Menu mnemonicParsing="false" text="Open Recent" />
+              <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" text="Save" />
+              <MenuItem mnemonicParsing="false" text="Save As…" />
+              <MenuItem mnemonicParsing="false" text="Revert" />
+              <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" text="Preferences…" />
+              <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" text="Quit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Undo" />
+              <MenuItem mnemonicParsing="false" text="Redo" />
+              <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" text="Cut" />
+              <MenuItem mnemonicParsing="false" text="Copy" />
+              <MenuItem mnemonicParsing="false" text="Paste" />
+              <MenuItem mnemonicParsing="false" text="Delete" />
+              <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem mnemonicParsing="false" text="Select All" />
+              <MenuItem mnemonicParsing="false" text="Unselect All" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="View">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Show Status Bar" />
+              <MenuItem mnemonicParsing="false" text="Show Toolbar" />
+              <MenuItem mnemonicParsing="false" text="Show Library" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Products">
+            <items>
+              <MenuItem mnemonicParsing="false" text="View Products" />
+              <MenuItem mnemonicParsing="false" text="Add Product" />
+              <MenuItem mnemonicParsing="false" text="Manage Inventory" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Orders">
+            <items>
+              <MenuItem mnemonicParsing="false" text="View Orders" />
+              <MenuItem mnemonicParsing="false" text="Create Order" />
+              <MenuItem mnemonicParsing="false" text="Order Reports" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem mnemonicParsing="false" text="Documentation" />
+              <MenuItem mnemonicParsing="false" text="Support" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ToolBar VBox.vgrow="NEVER">
+        <items>
+          <Button mnemonicParsing="false" text="Home" />
+          <Button mnemonicParsing="false" text="Products" />
+          <Button mnemonicParsing="false" text="Orders" />
+          <Button mnemonicParsing="false" text="Customers" />
+          <Button mnemonicParsing="false" text="Reports" />
+        </items>
+      </ToolBar>
+      <SplitPane dividerPositions="0.25" focusTraversable="true" prefHeight="160.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TreeTableView AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TreeTableColumn prefWidth="75.0" text="Category" />
+                      <TreeTableColumn prefWidth="75.0" text="Products" />
+                    </columns>
+                  </TreeTableView>
+               </children>
+          </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab text="Dashboard">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                               <children>
+                                  <GridPane layoutX="14.0" layoutY="14.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columnConstraints>
+                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                     <children>
+                                        <TableView prefHeight="200.0" prefWidth="200.0">
+                                          <columns>
+                                            <TableColumn prefWidth="75.0" text="Recent Orders" />
+                                            <TableColumn prefWidth="75.0" text="Status" />
+                                          </columns>
+                                        </TableView>
+                                        <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                          <columns>
+                                            <TableColumn prefWidth="75.0" text="Top Products" />
+                                            <TableColumn prefWidth="75.0" text="Sales" />
+                                          </columns>
+                                        </TableView>
+                                        <TableView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                          <columns>
+                                            <TableColumn prefWidth="75.0" text="Low Inventory" />
+                                            <TableColumn prefWidth="75.0" text="Quantity" />
+                                          </columns>
+                                        </TableView>
+                                        <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                          <columns>
+                                            <TableColumn prefWidth="75.0" text="Customer Reviews" />
+                                            <TableColumn prefWidth="75.0" text="Rating" />
+                                          </columns>
+                                        </TableView>
+                                     </children>
+                                  </GridPane>
+                               </children>
+                          </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Products">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                               <children>
+                                  <TableView layoutX="23.0" layoutY="21.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                      <TableColumn prefWidth="75.0" text="Product Name" />
+                                      <TableColumn prefWidth="75.0" text="Price" />
+                                      <TableColumn prefWidth="75.0" text="Stock" />
+                                    </columns>
+                                  </TableView>
+                               </children>
+                          </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Orders">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                               <children>
+                                  <TableView layoutX="26.0" layoutY="24.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <columns>
+                                      <TableColumn prefWidth="75.0" text="Order ID" />
+                                      <TableColumn prefWidth="75.0" text="Customer" />
+                                      <TableColumn prefWidth="75.0" text="Date" />
+                                      <TableColumn prefWidth="75.0" text="Status" />
+                                      <TableColumn prefWidth="75.0" text="Total" />
+                                    </columns>
+                                  </TableView>
+                               </children>
+                          </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+          </AnchorPane>
+        </items>
+      </SplitPane>
+      <BorderPane VBox.vgrow="NEVER">
+        <bottom>
+          <HBox prefHeight="26.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+            <children>
+              <Label text="Status: Ready" HBox.hgrow="ALWAYS">
+                <font>
+                  <Font size="11.0" />
+                </font>
+              </Label>
+              <Label text="User: Admin">
+                <font>
+                  <Font size="11.0" />
+                </font>
+              </Label>
+            </children>
+          </HBox>
+        </bottom>
+      </BorderPane>
+   </children>
+</VBox>
