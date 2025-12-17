@@ -1,41 +1,26 @@
 ```
-# Compiled and build artifacts
-*.class
-*.o
-*.obj
-*.exe
-*.dll
-*.so
-*.a
-*.out
-build/
+# Java/Maven specific
 target/
+*.class
+*.jar
+*.war
+*.ear
 
-# Dependencies
-lib/
-# Note: Maven dependencies typically in ~/.m2, not local dir
-
-# Logs and temp files
-*.log
-*.tmp
-*.swp
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
 
 # Environment
 .env
 .env.local
-.env.*
+*.env.*
 
-# Editors
-.vscode/
-.idea/
-*.swp
-*.swo
+# Logs
+*.log
 
-# OS specific
+# OS generated files
 .DS_Store
 Thumbs.db
-
-# Java specific
-*.class
-!src/**/*.java
 ```
